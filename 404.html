@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found</title>
+    <title>Redirecting...</title>
 </head>
 <body>
-    <h1>404 - Page Not Found</h1>
-    <p>Redirecting to the homepage...</p>
     <script>
-        // 이미 올바른 경로에 있지 않다면 리디렉션
-        if (!location.pathname.startsWith('/hakbi_pages')) {
-            var redirect = '/hakbi_pages' + location.pathname + location.search + location.hash;
-            location.replace(redirect);
-        }
+        // GitHub Pages에서 발생하는 404 오류를 잡아 index.html로 리디렉션합니다.
+        const currentPath = window.location.pathname;
+        const newPath = '/hakbi_pages' + currentPath;
+
+        // GitHub Pages에서 이 리디렉션이 정상적으로 동작하도록 해줍니다.
+        window.location.replace(newPath);
     </script>
 </body>
 </html>

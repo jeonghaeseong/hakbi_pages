@@ -1,0 +1,8 @@
+<script>
+    // GitHub Pages에서 모든 404 에러를 index.html로 리디렉션
+    var redirect = '/hakbi_pages' + location.pathname;
+    if (!location.pathname.endsWith('/')) {
+        redirect += '/';
+    }
+    location.href = redirect;
+</script>
